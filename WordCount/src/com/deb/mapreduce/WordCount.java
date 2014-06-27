@@ -108,7 +108,7 @@ public class WordCount {
     //Reducer
 	
     /** 
-     * @author edureka!
+     * @author droychowdhury
      * @interface Reducer
      * <p>Reduce class is static and extends MapReduceBase and implements Reducer 
      * interface having four hadoop generics type IntWritable,Text, IntWritable, IntWritable.
