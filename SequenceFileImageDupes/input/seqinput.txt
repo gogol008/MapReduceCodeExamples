@@ -1,0 +1,11 @@
+/user/training/sequencefile/images/auto_loan.png
+/user/training/sequencefile/images/blur1.jpg
+/user/training/sequencefile/images/credit_card_loan.bmp
+/user/training/sequencefile/images/flower.jpg
+/user/training/sequencefile/images/flower1.jpg
+/user/training/sequencefile/images/flower2.jpg
+/user/training/sequencefile/images/glow_blur.jpg
+/user/training/sequencefile/images/home_loan.jpg
+/user/training/sequencefile/images/personal_loan.gif
+/user/training/sequencefile/images/sleigh.jpg
+/user/training/sequencefile/images/threshold_blur.jpg
