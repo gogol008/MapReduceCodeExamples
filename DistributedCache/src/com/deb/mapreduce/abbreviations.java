@@ -39,7 +39,7 @@ public class abbreviations {
 						String state = tokens[1];
 						abMap.put(ab, state);
 						line = br.readLine();
-						br.close();
+						
 					}
 				}						
 			}
