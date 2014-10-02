@@ -1,0 +1,36 @@
+----loading and parsing data-----
+
+A = load '/weatherPIG' using TextLoader as (data:chararray);
+AF = foreach A generate TRIM(SUBSTRING(data, 6, 14)), TRIM(SUBSTRING(data, 46, 53)), TRIM(SUBSTRING(data, 38, 45));
+store AF into '/data9' using PigStorage(',');
+S = load '/data9/part-m-00000' using PigStorage(',') as (date:chararray, min:double, max:double);
+
+-------Hot Days------
+
+X = filter S by max > 25;
+
+-------Cold Days------
+
+X = filter S by min < 0;
+
+-------Hottest Day-----
+
+H1 = group S all; 	/* puts S's data in H1's Tuple */
+I = foreach H1 generate MAX(S.max) as maximum;
+X = filter S by max == I.maximum;
+
+-------Coldest Day------
+
+H2 = group S all;
+J = foreach H2 generate MIN(S.min) as minimum;
+X = filter S by min == J.minimum;
+
+
+-----UDF-----
+register PIGUdfCorrupt.jar;
+
+A = load '/weatherPIG' using TextLoader as (data:chararray);
+AF = foreach A generate TRIM(SUBSTRING(data, 6, 14)), IfCorrupted(TRIM(SUBSTRING(data, 46, 53))), IfCorrupted(TRIM(SUBSTRING(data, 38, 45)));
+store AF into '/data2' using PigStorage(',');
+S = load '/data2/part-m-00000' using PigStorage(',') as (date:chararray, min:double, max:double);
+
