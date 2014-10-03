@@ -1,0 +1,52 @@
+drop table employees;
+
+CREATE TABLE employees (
+name STRING,
+salary FLOAT,
+subordinates ARRAY<STRING>,
+contact MAP<STRING, STRING>,
+address STRUCT<street:STRING, city:STRING, state:STRING, zip:INT>
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '#'
+COLLECTION ITEMS TERMINATED BY ':'
+MAP KEYS TERMINATED BY '|'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+
+load data local inpath '/home/cloudera/Desktop/hive_er/emp.txt' overwrite into table employees;
+
+
+
+
+select * from employees;
+
+
+
+####################
+{
+	"name": "John Doe",
+	"salary": 100000.0,
+	"subordinates": ["Mary Smith", "Todd Jones"],
+	"contact": {
+		"email": "john@abc.com",
+		"phone": "1889291",
+		"Fax": "72189"
+	},
+	"address": {
+		"street": "1 Michigan Ave.",
+		"city": "Chicago",
+		"state": "IL",
+		"zip": 60600
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,802 @@
+<records>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2006</year_of_play>
+		<country>India</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1247</runs_scored>
+		<balls_played>1778</balls_played>
+	</record>
+	<record>
+		<player_id>1</player_id>
+		<year_of_play>2002</year_of_play>
+		<country>India</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1515</runs_scored>
+		<balls_played>1355</balls_played>
+	</record>
+	<record>
+		<player_id>2</player_id>
+		<year_of_play>2004</year_of_play>
+		<country>Australia</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1246</runs_scored>
+		<balls_played>1823</balls_played>
+	</record>
+	<record>
+		<player_id>3</player_id>
+		<year_of_play>2009</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1595</runs_scored>
+		<balls_played>1900</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>Australia</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1511</runs_scored>
+		<balls_played>1083</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2001</year_of_play>
+		<country>Australia</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1390</runs_scored>
+		<balls_played>1330</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2013</year_of_play>
+		<country>Australia</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1400</runs_scored>
+		<balls_played>1325</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>Australia</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1086</runs_scored>
+		<balls_played>1429</balls_played>
+	</record>
+	<record>
+		<player_id>1</player_id>
+		<year_of_play>2009</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1750</runs_scored>
+		<balls_played>1146</balls_played>
+	</record>
+	<record>
+		<player_id>1</player_id>
+		<year_of_play>2014</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1247</runs_scored>
+		<balls_played>1707</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2000</year_of_play>
+		<country>Australia</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1270</runs_scored>
+		<balls_played>1419</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2003</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1758</runs_scored>
+		<balls_played>1643</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2010</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1796</runs_scored>
+		<balls_played>1243</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2005</year_of_play>
+		<country>India</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1053</runs_scored>
+		<balls_played>1837</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2014</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1601</runs_scored>
+		<balls_played>1741</balls_played>
+	</record>
+	<record>
+		<player_id>3</player_id>
+		<year_of_play>2014</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1460</runs_scored>
+		<balls_played>1001</balls_played>
+	</record>
+	<record>
+		<player_id>10</player_id>
+		<year_of_play>2009</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1329</runs_scored>
+		<balls_played>1805</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2001</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1422</runs_scored>
+		<balls_played>1911</balls_played>
+	</record>
+	<record>
+		<player_id>8</player_id>
+		<year_of_play>2000</year_of_play>
+		<country>Australia</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1407</runs_scored>
+		<balls_played>1202</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2009</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1672</runs_scored>
+		<balls_played>1295</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2003</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1271</runs_scored>
+		<balls_played>1835</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2004</year_of_play>
+		<country>Australia</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1769</runs_scored>
+		<balls_played>1437</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2001</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1515</runs_scored>
+		<balls_played>1147</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2002</year_of_play>
+		<country>India</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1970</runs_scored>
+		<balls_played>1632</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2013</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1251</runs_scored>
+		<balls_played>1976</balls_played>
+	</record>
+	<record>
+		<player_id>7</player_id>
+		<year_of_play>2009</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1141</runs_scored>
+		<balls_played>1282</balls_played>
+	</record>
+	<record>
+		<player_id>1</player_id>
+		<year_of_play>2004</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1795</runs_scored>
+		<balls_played>1025</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2008</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1976</runs_scored>
+		<balls_played>1651</balls_played>
+	</record>
+	<record>
+		<player_id>2</player_id>
+		<year_of_play>2014</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1581</runs_scored>
+		<balls_played>1084</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2000</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1334</runs_scored>
+		<balls_played>1903</balls_played>
+	</record>
+	<record>
+		<player_id>1</player_id>
+		<year_of_play>2008</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1089</runs_scored>
+		<balls_played>1259</balls_played>
+	</record>
+	<record>
+		<player_id>10</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1701</runs_scored>
+		<balls_played>1975</balls_played>
+	</record>
+	<record>
+		<player_id>7</player_id>
+		<year_of_play>2007</year_of_play>
+		<country>Australia</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1543</runs_scored>
+		<balls_played>1089</balls_played>
+	</record>
+	<record>
+		<player_id>7</player_id>
+		<year_of_play>2002</year_of_play>
+		<country>India</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1685</runs_scored>
+		<balls_played>1998</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2008</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1709</runs_scored>
+		<balls_played>1596</balls_played>
+	</record>
+	<record>
+		<player_id>2</player_id>
+		<year_of_play>2013</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1245</runs_scored>
+		<balls_played>1292</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2013</year_of_play>
+		<country>Australia</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1980</runs_scored>
+		<balls_played>1415</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2002</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1830</runs_scored>
+		<balls_played>1201</balls_played>
+	</record>
+	<record>
+		<player_id>3</player_id>
+		<year_of_play>2012</year_of_play>
+		<country>Australia</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1558</runs_scored>
+		<balls_played>1297</balls_played>
+	</record>
+	<record>
+		<player_id>10</player_id>
+		<year_of_play>2000</year_of_play>
+		<country>India</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1457</runs_scored>
+		<balls_played>1852</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2013</year_of_play>
+		<country>Australia</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1394</runs_scored>
+		<balls_played>1934</balls_played>
+	</record>
+	<record>
+		<player_id>2</player_id>
+		<year_of_play>2000</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1597</runs_scored>
+		<balls_played>1295</balls_played>
+	</record>
+	<record>
+		<player_id>2</player_id>
+		<year_of_play>2014</year_of_play>
+		<country>India</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1811</runs_scored>
+		<balls_played>1807</balls_played>
+	</record>
+	<record>
+		<player_id>8</player_id>
+		<year_of_play>2003</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1627</runs_scored>
+		<balls_played>1212</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2012</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1279</runs_scored>
+		<balls_played>1205</balls_played>
+	</record>
+	<record>
+		<player_id>7</player_id>
+		<year_of_play>2001</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1646</runs_scored>
+		<balls_played>1636</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>India</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1544</runs_scored>
+		<balls_played>1250</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2013</year_of_play>
+		<country>Australia</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1893</runs_scored>
+		<balls_played>1412</balls_played>
+	</record>
+	<record>
+		<player_id>7</player_id>
+		<year_of_play>2002</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1866</runs_scored>
+		<balls_played>1014</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2014</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1150</runs_scored>
+		<balls_played>1411</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2007</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1407</runs_scored>
+		<balls_played>1294</balls_played>
+	</record>
+	<record>
+		<player_id>10</player_id>
+		<year_of_play>2004</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1992</runs_scored>
+		<balls_played>1505</balls_played>
+	</record>
+	<record>
+		<player_id>1</player_id>
+		<year_of_play>2006</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1692</runs_scored>
+		<balls_played>1374</balls_played>
+	</record>
+	<record>
+		<player_id>8</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1297</runs_scored>
+		<balls_played>1613</balls_played>
+	</record>
+	<record>
+		<player_id>10</player_id>
+		<year_of_play>2007</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1483</runs_scored>
+		<balls_played>1126</balls_played>
+	</record>
+	<record>
+		<player_id>2</player_id>
+		<year_of_play>2014</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1104</runs_scored>
+		<balls_played>1114</balls_played>
+	</record>
+	<record>
+		<player_id>3</player_id>
+		<year_of_play>2010</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1345</runs_scored>
+		<balls_played>1799</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2002</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1812</runs_scored>
+		<balls_played>1235</balls_played>
+	</record>
+	<record>
+		<player_id>7</player_id>
+		<year_of_play>2007</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1009</runs_scored>
+		<balls_played>1577</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2004</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1112</runs_scored>
+		<balls_played>1785</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2008</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1632</runs_scored>
+		<balls_played>1497</balls_played>
+	</record>
+	<record>
+		<player_id>10</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1049</runs_scored>
+		<balls_played>1891</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2012</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1290</runs_scored>
+		<balls_played>1088</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2005</year_of_play>
+		<country>Australia</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1276</runs_scored>
+		<balls_played>1683</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1208</runs_scored>
+		<balls_played>1591</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2006</year_of_play>
+		<country>Australia</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1450</runs_scored>
+		<balls_played>1703</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2013</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1893</runs_scored>
+		<balls_played>1556</balls_played>
+	</record>
+	<record>
+		<player_id>7</player_id>
+		<year_of_play>2002</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1776</runs_scored>
+		<balls_played>1413</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2012</year_of_play>
+		<country>India</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1397</runs_scored>
+		<balls_played>1303</balls_played>
+	</record>
+	<record>
+		<player_id>2</player_id>
+		<year_of_play>2013</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1704</runs_scored>
+		<balls_played>1919</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2004</year_of_play>
+		<country>India</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1786</runs_scored>
+		<balls_played>1477</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2008</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1845</runs_scored>
+		<balls_played>1015</balls_played>
+	</record>
+	<record>
+		<player_id>1</player_id>
+		<year_of_play>2010</year_of_play>
+		<country>India</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1281</runs_scored>
+		<balls_played>1082</balls_played>
+	</record>
+	<record>
+		<player_id>8</player_id>
+		<year_of_play>2012</year_of_play>
+		<country>India</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1310</runs_scored>
+		<balls_played>1397</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2001</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1119</runs_scored>
+		<balls_played>1342</balls_played>
+	</record>
+	<record>
+		<player_id>8</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1381</runs_scored>
+		<balls_played>1508</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2013</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1353</runs_scored>
+		<balls_played>1399</balls_played>
+	</record>
+	<record>
+		<player_id>9</player_id>
+		<year_of_play>2005</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1515</runs_scored>
+		<balls_played>1861</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2012</year_of_play>
+		<country>Australia</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1785</runs_scored>
+		<balls_played>1405</balls_played>
+	</record>
+	<record>
+		<player_id>6</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>Australia</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1289</runs_scored>
+		<balls_played>1799</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2011</year_of_play>
+		<country>India</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1684</runs_scored>
+		<balls_played>1885</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2002</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1540</runs_scored>
+		<balls_played>1337</balls_played>
+	</record>
+	<record>
+		<player_id>2</player_id>
+		<year_of_play>2006</year_of_play>
+		<country>India</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1955</runs_scored>
+		<balls_played>1507</balls_played>
+	</record>
+	<record>
+		<player_id>2</player_id>
+		<year_of_play>2010</year_of_play>
+		<country>India</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1613</runs_scored>
+		<balls_played>1723</balls_played>
+	</record>
+	<record>
+		<player_id>7</player_id>
+		<year_of_play>2008</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1792</runs_scored>
+		<balls_played>1118</balls_played>
+	</record>
+	<record>
+		<player_id>10</player_id>
+		<year_of_play>2009</year_of_play>
+		<country>Australia</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1964</runs_scored>
+		<balls_played>1883</balls_played>
+	</record>
+	<record>
+		<player_id>3</player_id>
+		<year_of_play>2010</year_of_play>
+		<country>India</country>
+		<opposition_country>Bangaldesh</opposition_country>
+		<runs_scored>1960</runs_scored>
+		<balls_played>1366</balls_played>
+	</record>
+	<record>
+		<player_id>8</player_id>
+		<year_of_play>2004</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1664</runs_scored>
+		<balls_played>1772</balls_played>
+	</record>
+	<record>
+		<player_id>3</player_id>
+		<year_of_play>2000</year_of_play>
+		<country>Australia</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1861</runs_scored>
+		<balls_played>1758</balls_played>
+	</record>
+	<record>
+		<player_id>3</player_id>
+		<year_of_play>2004</year_of_play>
+		<country>Australia</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1908</runs_scored>
+		<balls_played>1009</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2010</year_of_play>
+		<country>Australia</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1259</runs_scored>
+		<balls_played>1131</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2008</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1689</runs_scored>
+		<balls_played>1532</balls_played>
+	</record>
+	<record>
+		<player_id>8</player_id>
+		<year_of_play>2012</year_of_play>
+		<country>India</country>
+		<opposition_country>NewZealand</opposition_country>
+		<runs_scored>1252</runs_scored>
+		<balls_played>1422</balls_played>
+	</record>
+	<record>
+		<player_id>5</player_id>
+		<year_of_play>2008</year_of_play>
+		<country>India</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1856</runs_scored>
+		<balls_played>1513</balls_played>
+	</record>
+	<record>
+		<player_id>8</player_id>
+		<year_of_play>2005</year_of_play>
+		<country>India</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1633</runs_scored>
+		<balls_played>1816</balls_played>
+	</record>
+	<record>
+		<player_id>1</player_id>
+		<year_of_play>2007</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>West Indies</opposition_country>
+		<runs_scored>1292</runs_scored>
+		<balls_played>1479</balls_played>
+	</record>
+	<record>
+		<player_id>10</player_id>
+		<year_of_play>2000</year_of_play>
+		<country>India</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1810</runs_scored>
+		<balls_played>1782</balls_played>
+	</record>
+	<record>
+		<player_id>4</player_id>
+		<year_of_play>2006</year_of_play>
+		<country>Sri Lanka</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1853</runs_scored>
+		<balls_played>1041</balls_played>
+	</record>
+	<record>
+		<player_id>7</player_id>
+		<year_of_play>2007</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1727</runs_scored>
+		<balls_played>1588</balls_played>
+	</record>
+	<record>
+		<player_id>1</player_id>
+		<year_of_play>2008</year_of_play>
+		<country>Pakistan</country>
+		<opposition_country>South Africa</opposition_country>
+		<runs_scored>1088</runs_scored>
+		<balls_played>1506</balls_played>
+	</record>
+</records>

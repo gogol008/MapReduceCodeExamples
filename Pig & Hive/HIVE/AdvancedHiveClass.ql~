@@ -1,0 +1,232 @@
+
+Cubes, Rollup, Grouping Set:
+===================================================
+CREATE EXTERNAL TABLE `player_opposition_runs`(
+  `player_id` int, 
+  `year_of_play` string,
+  `country` string,
+  `opposition_country` string, 
+  `runs_scored` int, 
+  `balls_played` int)
+COMMENT 'This is the staging player_runs table'
+ROW FORMAT DELIMITED 
+  FIELDS TERMINATED BY ',' 
+  LINES TERMINATED BY '\n' 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  '/input/runs_opposition';
+
+  LOAD DATA LOCAL INPATH "data/runs_opposition.csv" INTO TABLE player_opposition_runs;
+
+  Grouping Set: 
+----------------------------------------
+
+SELECT player_id, year_of_play, SUM(runs_scored) FROM player_opposition_runs GROUP BY player_id, year_of_play GROUPING SETS ( (player_id, year_of_play) , (player_id));
+  
+SELECT player_id, year_of_play, country, SUM(runs_scored) FROM player_opposition_runs GROUP BY player_id, year_of_play, country GROUPING SETS ( (player_id, year_of_play, country) , (player_id, country), (player_id));
+
+
+  Cube:
+  --------------------------------------
+
+SELECT player_id, year_of_play, SUM(runs_scored) FROM player_opposition_runs GROUP BY player_id, year_of_play with CUBE;
+
+
+Rollup
+-----------------------------------------
+ SELECT player_id, year_of_play, country, SUM(runs_scored) FROM player_opposition_runs GROUP BY player_id, year_of_play, country with rollup;
+
+
+
+
+
+----------------------------------------------------------
+CREATE TABLE json_table ( json string );
+
+LOAD DATA LOCAL INPATH  'data/simple.json' INTO TABLE json_table;
+
+
+select get_json_object(json_table.json, '$') from json_table; 
+
+set hive.cli.print.header=true;
+select get_json_object(json_table.json, '$.Foo') as foo, 
+       get_json_object(json_table.json, '$.Bar') as bar,
+       get_json_object(json_table.json, '$.Quux.QuuxId') as qid,
+       get_json_object(json_table.json, '$.Quux.QuuxName') as qname
+from json_table;
+
+
+single parse
+select v.foo, v.bar, v.quux, v.qid 
+from json_table jt
+     LATERAL VIEW json_tuple(jt.json, 'Foo', 'Bar', 'Quux', 'Quux.QuuxId') v
+     as foo, bar, quux, qid;
+
+
+select v1.foo, v1.bar, v2.qid, v2.qname 
+from json_table jt
+     LATERAL VIEW json_tuple(jt.json, 'Foo', 'Bar', 'Quux') v1
+     as foo, bar, quux
+     LATERAL VIEW json_tuple(v1.quux, 'QuuxId', 'QuuxName') v2
+     as qid, qname;
+==================with serde -  Serde JSON:
+
+
+
+ADD JAR hive-json-serde-0.2.jar
+
+
+CREATE EXTERNAL TABLE `player_opposition_runs_json`(
+  `player_id` int, 
+  `year_of_play` int,
+  `country` string,
+  `opposition_country` string, 
+  `runs_scored` int, 
+  `balls_played` int)
+COMMENT 'This is the player_opposition_runs_json table'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.JsonSerde'
+WITH SERDEPROPERTIES (
+  "player_id"="$.player_id",
+  "year_of_play"="$.year_of_play",
+  "country"="$.country",
+  "opposition_country"="$.opposition_country", 
+  "runs_scored"="$.runs_scored",
+  "balls_played"="$.balls_played"
+)
+LOCATION
+  '/input/runs_opposition_json';
+
+LOAD DATA LOCAL INPATH "data/runs_opposition.json" INTO TABLE player_opposition_runs_json;
+
+select * from player_opposition_runs_json limit 10;
+
+Serde XML:
+---------------------------------------------------------
+ADD JAR hivexmlserde-1.0.4.0.jar;
+
+
+
+CREATE EXTERNAL TABLE `player_opposition_runs_xml`(
+  `player_id` int, 
+  `year_of_play` string,
+  `country` string,
+  `opposition_country` string, 
+  `runs_scored` int, 
+  `balls_played` int)
+COMMENT 'This is the player_opposition_runs_xml table'
+ROW FORMAT SERDE 'com.ibm.spss.hive.serde2.xml.XmlSerDe'
+WITH SERDEPROPERTIES (
+"column.xpath.player_id"="/record/player_id/text()",
+"column.xpath.year_of_play"="/record/year_of_play/text()",
+"column.xpath.country"="/record/country/text()",
+"column.xpath.opposition_country"="/record/opposition_country/text()",
+"column.xpath.runs_scored"="/record/runs_scored/text()",
+"column.xpath.balls_played"="/record/balls_played/text()"
+)
+STORED AS
+INPUTFORMAT 'com.ibm.spss.hive.serde2.xml.XmlInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.IgnoreKeyTextOutputFormat'
+LOCATION
+  '/input/runs_opposition_xml' 
+TBLPROPERTIES (
+"xmlinput.start"="<record>",
+"xmlinput.end"="</record>"
+)
+ 
+
+
+
+LOAD DATA LOCAL INPATH "data/runs_opposition.xml" INTO TABLE player_opposition_runs_xml;
+
+select * from player_opposition_runs_xml limit 10;
+
+
+
+
+
+=======================plugin mapper and reducer script
+CREATE TABLE u_data ( userid INT, movieid INT, rating INT, unixtime STRING) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE; 
+
+
+LOAD DATA LOCAL INPATH 'data/user.txt' OVERWRITE INTO TABLE u_data; 
+
+
+CREATE TABLE u_data_new ( 
+userid INT, 
+movieid INT, 
+rating INT, 
+weekday INT) 
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY '\t'; 
+
+add FILE weekday_mapper.py; 
+
+****Note that columns will be transformed to string and delimited 
+****by TAB before feeding to the user script, and the standard output 
+****of the user script will be treated as TAB-separated string columns.
+
+****The following command uses the TRANSFORM clause to embed the mapper scripts.
+
+INSERT OVERWRITE TABLE u_data_new 
+SELECT TRANSFORM (userid, movieid, rating, unixtime) USING 'python weekday_mapper.py' 
+        AS (userid, movieid, rating, weekday) 
+FROM u_data; 
+
+SELECT weekday, COUNT(*) 
+FROM u_data_new 
+GROUP BY weekday;
+
+
+
+Custom Map Reduce Script:
+----------------------------------
+
+CREATE EXTERNAL TABLE nasdaq_prices (exchange1 STRING, stock_symbol STRING, modified_date STRING,stock_price_open FLOAT,stock_price_high FLOAT,stock_price_low FLOAT,stock_price_close FLOAT,stock_volume FLOAT,stock_price_adj_close FLOAT )
+COMMENT 'This is the nasdaq prices table'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'
+STORED AS TEXTFILE
+LOCATION '/input/nasdaq/daily_price/';
+
+LOAD DATA LOCAL INPATH 'data/NASDAQ_daily_prices_A_sample.csv' OVERWRITE INTO TABLE nasdaq_prices; 
+
+head data/NASDAQ_daily_prices_A_sample.csv | tr ',' '\t' | python stock_mapper.py
+
+
+add file stock_mapper.py;
+
+select transform (exchange1,stock_symbol,modified_date,stock_price_open,stock_price_high,stock_price_low,stock_price_close,stock_volume,stock_price_adj_close) using "python stock_mapper.py" from nasdaq_prices where exchange1="NASDAQ" limit 10;
+
+
+add file stock_reducer.py;
+
+FROM (
+FROM nasdaq_prices
+MAP exchange1,stock_symbol,modified_date,stock_price_open,stock_price_high,stock_price_low,stock_price_close,stock_volume,stock_price_adj_close 
+USING 'python stock_mapper.py'
+AS price_type, price order by price_type) map_output
+REDUCE price_type, price
+USING 'python stock_reducer.py'
+AS price_type, price;
+
+
+Hive UDF/UDAF:
+==============================================
+
+ADD JAR module8-dz.jar;
+
+create temporary function date_change as 'com.module8.hiveudf.DateFormatU1' ;
+select stock_symbol, date_change( modified_date ) from nasdaq_prices limit 10;
+
+create temporary function mean as 'com.module8.hiveudf.Mean' ;
+
+select mean(stock_price_open) from nasdaq_prices where stock_symbol="ABXA";
+
+
+
+
+
+
