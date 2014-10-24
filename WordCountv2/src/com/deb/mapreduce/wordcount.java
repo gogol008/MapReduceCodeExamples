@@ -94,7 +94,7 @@ public class wordcount {
 			if (myKey.equals("data")) {
 				return 1;
 			} else {
-				return 2;
+				return 3;
 			}
 		}
 
