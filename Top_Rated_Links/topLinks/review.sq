@@ -1,0 +1,1 @@
+./sqoop export --connect jdbc:mysql://therajib.com/therajib_project  --table review_stg   --export-dir /user/training/linkData/topLinks --username training --fields-terminated-by '\001'

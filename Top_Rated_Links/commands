@@ -1,0 +1,99 @@
+hadoop jar Desktop/review.jar /social-odp-2k9_annotations.xml /tmp/out
+
+http://localhost:50030/jobtracker.jsp
+
+---------------------------------------------------------------------------------
+pig commands
+
+
+a = load '/tmp/out/' using PigStorage(',') 
+	as (category:chararray ,hash:chararray, url:chararray , positive:int , negative:int ,totalreview:int );
+
+url_cat = foreach a generate hash ,TRIM(category); 
+store url_cat into '/tmp/url_cat/';
+
+url_review =  foreach a generate  hash  , url , positive, negative, totalreview; 
+url_review_distict = distinct url_review;
+store url_review_distict into '/tmp/url_review_distict/'  ;
+
+
+------------------------------------------------------------------------------------
+
+
+hive commands
+
+
+CREATE EXTERNAL TABLE URL_CAT(
+hash string,
+category string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+LOCATION '/tmp/url_cat/';
+
+
+LOAD DATA INPATH '/tmp/url_cat/part-m-00000_copy_1' into table URL_CAT;
+
+select * from url_cat;
+
+
+CREATE EXTERNAL TABLE URL_REVIEW_DISTICT(
+hash string,
+url string,
+positive int,
+negative int ,
+totalreview int
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+LOCATION '/tmp/url_review_distict/';
+
+LOAD DATA INPATH '/tmp/url_review_distict/part-r-00000' into table URL_REVIEW_DISTICT;
+
+select * from url_review_distict;
+
+----------------------------------------------------------------------------------------------
+Queries that you may run to do some simple analysis-
+
+select count(*) from url_cat u join url_review_distict r  on u.hash = r.hash where u.category = 'political';
+
+select * from url_cat u join url_review_distict r  on u.hash = r.hash where u.category = 'political';
+
+---------------------------------------------------------------------------------------------
+
+insert overwrite  directory '/tmp/reviewfinal/'
+select url_data.cat , url_data.url , url_data.pos ,
+url_data.neg , url_data.total, url_data.hash
+from 
+(
+select u.category as cat , r.positive as pos, r.url as url , 
+r.negative as neg ,r.totalreview as total , r.hash as hash
+from url_cat u 
+join url_review_distict r  on u.hash = r.hash 
+)
+url_data
+join (
+select u.category as cat , max(r.positive) as pos from url_cat u 
+join url_review_distict r  on u.hash = r.hash group by u.category having pos>0
+) max_reivew 
+on   max_reivew.pos = url_data.pos
+where max_reivew.cat = url_data.cat
+and url_data.total > 500
+order by url_data.cat;
+
+
+
+
+cp /home/cloudera/Desktop/mysql-connector-java-5.1.25-bin.jar /usr/lib/sqoop/lib/
+
+
+----------------------------------------------------------------------------------------------------
+
+sqoop export --connect jdbc:mysql://therajibdeb.com:3306/therajib_sqoop --table review_stg --username therajib_sqoop --password sqoopuser --export-dir '/tmp/reviewfinal' --input-fields-terminated-by '\001'
+
+
+------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
