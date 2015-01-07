@@ -72,7 +72,7 @@ public class abbreviations {
     job.setNumReduceTasks(0);
     
     try{
-    DistributedCache.addCacheFile(new URI("/abc.dat"), job.getConfiguration());
+    DistributedCache.addCacheFile(new URI("/user/deb/dc/abc.dat"), job.getConfiguration());
     }catch(Exception e){
     	System.out.println(e);
     }
