@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="E:/hadoop/hadoop-2.4.1/share/hadoop/mapreduce/lib/commons-io-2.4.jar"/>
 	<classpathentry kind="lib" path="E:/hadoop/hadoop-2.4.1/share/hadoop/common/hadoop-common-2.4.1.jar"/>
 	<classpathentry kind="lib" path="E:/hadoop/hadoop-2.4.1/share/hadoop/common/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="E:/hadoop/hadoop-2.4.1/share/hadoop/common/lib/commons-logging-1.1.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -3,7 +3,7 @@ Hive Command:
 
 1. Create Table: 
 ========================
-CREATE TABLE player_runs(player_id INT, year_of_play STRING, runs_scored INT)
+CREATE EXTERNAL TABLE player_runs(player_id INT, year_of_play STRING, runs_scored INT)
 COMMENT 'This is the player_run table'
 STORED AS TEXTFILE;
 
@@ -32,9 +32,12 @@ CREATE TABLE player_runs(player_id INT, year_of_play STRING, runs_scored INT, ba
 COMMENT 'This is the player_run table'
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
 STORED AS TEXTFILE;
 
-LOAD DATA LOCAL INPATH "data/runs.csv" INTO TABLE player_runs;
+LOAD DATA LOCAL INPATH "data/runs.csv" INTO TABLE player_runs; --LocalFS
+
+LOAD DATA INPATH "/user/debadyuti.roychowdhury_gmail/HiveData/runs.csv" INTO TABLE player_runs;  --HDFS
 
 select * from player_runs limit 10;
 
@@ -45,11 +48,11 @@ select * from player_runs limit 10;
 CREATE EXTERNAL TABLE player_runs_p(player_id INT, year_of_play STRING, runs_scored INT, balls_played INT)
 COMMENT 'This is the staging player_runs table'  PARTITIONED BY(country STRING)  
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'
-STORED AS TEXTFILE
-LOCATION '/input/runs';
+STORED AS TEXTFILE;
+-- LOCATION '/input/runs';
 
-hadoop dfs -mkdir /input/runs/country=India
-hadoop dfs -put data/runs_India.csv /input/runs/country=India/
+hadoop fs -mkdir /input/runs/country=India
+hadoop fs -put data/runs_India.csv /input/runs/country=India/
 
 ALTER TABLE player_runs_p ADD PARTITION(country='India');
 
@@ -57,14 +60,14 @@ ALTER TABLE player_runs_p ADD PARTITION(country='India');
 7. Loading data into Table
 =============================
 
-LOAD DATA LOCAL INPATH "data/runs_US.csv" INTO TABLE player_runs_p PARTITION(country='US');
-LOAD DATA LOCAL INPATH "data/runs_India.csv" INTO TABLE player_runs_p PARTITION(country='INDIA');
+LOAD DATA INPATH '/user/debadyuti.roychowdhury_gmail/HiveData/runs_us.csv' INTO TABLE player_runs_p PARTITION(country='US');
+LOAD DATA INPATH '/user/debadyuti.roychowdhury_gmail/HiveData/runs_india.csv' INTO TABLE player_runs_p PARTITION(country='India');
 
 
 FROM player_runs_p
 INSERT OVERWRITE TABLE player_runs 
-SELECT player_id, year_of_play, runs_scored,balls_played 
-where player_id=10;
+SELECT player_id, year_of_play, runs_scored,balls_played;
+--where player_id=10;
 
 
 8. Simple Select Query:
@@ -82,12 +85,12 @@ select player_id, sum(runs_scored) from player_runs group by player_id;
 CREATE EXTERNAL TABLE players(player_id INT, name STRING)
 COMMENT 'This is the staging player table'  
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'
-STORED AS TEXTFILE
-LOCATION '/input/player';
+STORED AS TEXTFILE;
+--LOCATION '/input/player';
 
-LOAD DATA LOCAL INPATH "data/player.csv" INTO TABLE players;
+LOAD DATA INPATH "/user/debadyuti.roychowdhury_gmail/HiveData/player.csv" INTO TABLE players;
 
-select * from players join player_runs on players.player_id=player_runs.player_id;
+select * from player_runs join players on player_runs.player_id=players.player_id;
 
 select * from players full outer join player_runs on players.player_id=player_runs.player_id;
 
@@ -136,11 +139,12 @@ INSERT OVERWRITE DIRECTORY '/output/yearly_runs'
 CREATE EXTERNAL TABLE player_runs_distribute(player_id INT, year_of_play STRING, runs_scored INT, balls_played INT)
 COMMENT 'This is the staging player_runs table'  PARTITIONED BY(country STRING)  
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'
-STORED AS TEXTFILE
-LOCATION '/input/runs_distribute/';
+STORED AS TEXTFILE;
+--LOCATION '/input/runs_distribute/';
 
 set hive.exec.dynamic.partition=true;
 set hive.exec.dynamic.partition.mode=nonstrict;
+
 FROM player_runs 
 INSERT OVERWRITE TABLE player_runs_distribute PARTITION(country)
 SELECT player_id,  year_of_play , runs_scored , balls_played, country 
@@ -158,10 +162,10 @@ COMMENT 'This is the  player_runs table'  PARTITIONED BY(country STRING)
 clustered by (player_id) INTO 10 buckets 
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
-STORED AS TEXTFILE
-LOCATION '/input/runs_clustered/';
+STORED AS TEXTFILE;
+--LOCATION '/input/runs_clustered/';
 
-LOAD DATA LOCAL INPATH "data/runs_extra.csv" INTO TABLE player_runs;
+LOAD DATA INPATH "/user/debadyuti.roychowdhury_gmail/HiveData/runs_extra.csv" OVERWRITE INTO TABLE player_runs;
 
 set hive.exec.dynamic.partition=true;
 set hive.exec.dynamic.partition.mode=nonstrict;

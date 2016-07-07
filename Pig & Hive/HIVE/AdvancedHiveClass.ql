@@ -12,7 +12,7 @@ COMMENT 'This is the staging player_runs table'
 ROW FORMAT DELIMITED 
   FIELDS TERMINATED BY ',' 
   LINES TERMINATED BY '\n' 
-STORED AS INPUTFORMAT 
+STORED AS INPUTFORMAT
   'org.apache.hadoop.mapred.TextInputFormat' 
 OUTPUTFORMAT 
   'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
@@ -30,14 +30,15 @@ SELECT player_id, year_of_play, country, SUM(runs_scored) FROM player_opposition
 
 
   Cube:
-  --------------------------------------
+----------------------------------------
 
 SELECT player_id, year_of_play, SUM(runs_scored) FROM player_opposition_runs GROUP BY player_id, year_of_play with CUBE;
 
+SELECT player_id, year_of_play, country, SUM(runs_scored) FROM player_opposition_runs GROUP BY player_id, year_of_play, country with cube;
 
 Rollup
 -----------------------------------------
- SELECT player_id, year_of_play, country, SUM(runs_scored) FROM player_opposition_runs GROUP BY player_id, year_of_play, country with rollup;
+SELECT player_id, year_of_play, country, SUM(runs_scored) FROM player_opposition_runs GROUP BY player_id, year_of_play, country with rollup;
 
 
 
@@ -73,9 +74,9 @@ from json_table jt
      as foo, bar, quux
      LATERAL VIEW json_tuple(v1.quux, 'QuuxId', 'QuuxName') v2
      as qid, qname;
+
+	 
 ==================with serde -  Serde JSON:
-
-
 
 ADD JAR /root/Hive/hive-json-serde-0.2.jar;
 

@@ -13,7 +13,7 @@ public class DateFormatU1 extends UDF {
 	
 	public Text evaluate(Text dateText) throws IOException {
 		DateFormat formatDate=DateFormat.getDateInstance(DateFormat.MEDIUM);
-		DateFormat parseFormat=new SimpleDateFormat("yyyyy-mm-dd");
+		DateFormat parseFormat=new SimpleDateFormat("yyyy-mm-dd");
 		String date=dateText.toString();
 		try {
 			Date parsedDate=parseFormat.parse(date);

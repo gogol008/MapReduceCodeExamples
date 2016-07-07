@@ -1,6 +1,5 @@
-/*******************************************************************************
-   For succesfully running this project we need the hadoop common and the mapred jars which should be in the lib directory of the hadoop install
-  ******************************************************************************/
+/*For succesfully running this project we need the hadoop common and the mapred jars which should be in the lib directory of the hadoop install
+ */
 
 package com.deb.mapreduce;
 
@@ -14,9 +13,11 @@ import java.util.StringTokenizer;
  */
 
 import org.apache.hadoop.fs.Path;
+
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+
 import org.apache.hadoop.mapred.FileInputFormat;
 import org.apache.hadoop.mapred.FileOutputFormat;
 import org.apache.hadoop.mapred.JobClient;
@@ -24,32 +25,34 @@ import org.apache.hadoop.mapred.JobConf;
 import org.apache.hadoop.mapred.MapReduceBase;
 import org.apache.hadoop.mapred.Mapper;
 import org.apache.hadoop.mapred.OutputCollector;
-import org.apache.hadoop.mapred.Partitioner;
+//import org.apache.hadoop.mapred.Partitioner;
 import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
 import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.TextOutputFormat;
 
 /**
-* @author droychowdhury 
-* @version 1.0
-* @since 17-Jan-2014
-* @package com.deb.mapreduce
-* The Alphabet program counts the number of times each word is repeated in an input text
-* file. We write a map reduce code to achieve this, where mapper makes key value pair from the input 
-* file and reducer does aggregation on this key value pair.
-*/
+ * @author droychowdhury
+ * @version 1.0
+ * @since 17-Jan-2014
+ * @package com.deb.mapreduce The Alphabet program counts the number of times
+ *          each word is repeated in an input text file. We write a map reduce
+ *          code to achieve this, where mapper makes key value pair from the
+ *          input file and reducer does aggregation on this key value pair.
+ */
 
 public class wordcount {
 
-	/** 
+	/**
 	 * @author droychowdhury
 	 * @interface Mapper
-	 * <p>Map class is static and extends MapReduceBase and implements Mapper 
-	 * interface having four hadoop generics type LongWritable, Text, Text, IntWritable
+	 *            <p>
+	 *            Map class is static and extends MapReduceBase and implements
+	 *            Mapper interface having four hadoop generics type
+	 *            LongWritable, Text, Text, IntWritable
 	 */
-	
-	public static class Map extends MapReduceBase implements
+
+	public static class wordmapper extends MapReduceBase implements
 			Mapper<LongWritable, Text, Text, IntWritable> {
 
 		@Override
@@ -57,7 +60,7 @@ public class wordcount {
 				OutputCollector<Text, IntWritable> output, Reporter reporter)
 				throws IOException {
 
-			String line = value.toString();
+			String line = value.toString().toLowerCase().replaceAll("\\p{Punct}|\\d", "");
 			StringTokenizer tokenizer = new StringTokenizer(line);
 
 			while (tokenizer.hasMoreTokens()) {
@@ -80,7 +83,7 @@ public class wordcount {
 		}
 	}
 
-	// Output types of Mapper should be same as arguments of Partitioner
+	/*/ Output types of Mapper should be same as arguments of Partitioner
 	public static class MyPartitioner implements Partitioner<Text, IntWritable> {
 
 		@Override
@@ -88,13 +91,13 @@ public class wordcount {
 
 			String myKey = key.toString().toLowerCase();
 
-			if (myKey.equals("hadoop")) {
+			if (myKey.equals("spark")) {
 				return 0;
 			}
-			if (myKey.equals("data")) {
+			if (myKey.equals("super")) {
 				return 1;
 			} else {
-				return 3;
+				return 2;
 			}
 		}
 
@@ -105,9 +108,9 @@ public class wordcount {
 			// Configurations
 
 		}
-	}
+	} */
 
-	public static class Reduce extends MapReduceBase implements
+	public static class reducer extends MapReduceBase implements
 			Reducer<Text, IntWritable, Text, IntWritable> {
 
 		@Override
@@ -133,12 +136,12 @@ public class wordcount {
 		conf.setJobName("wordcount");
 
 		// Forcing program to run 3 reducers
-		conf.setNumReduceTasks(3);
+		//conf.setNumReduceTasks(3);
 
-		conf.setMapperClass(Map.class);
-		conf.setCombinerClass(Reduce.class);
-		conf.setReducerClass(Reduce.class);
-		conf.setPartitionerClass(MyPartitioner.class);
+		conf.setMapperClass(wordmapper.class);
+		//conf.setCombinerClass(reducer.class);
+		conf.setReducerClass(reducer.class);
+		//conf.setPartitionerClass(MyPartitioner.class);
 
 		conf.setOutputKeyClass(Text.class);
 		conf.setOutputValueClass(IntWritable.class);
@@ -146,9 +149,9 @@ public class wordcount {
 		conf.setInputFormat(TextInputFormat.class);
 		conf.setOutputFormat(TextOutputFormat.class);
 
-		 FileInputFormat.setInputPaths(conf, new Path(args[0]));
-		 FileOutputFormat.setOutputPath(conf, new Path(args[1]));
-		 
+		FileInputFormat.setInputPaths(conf, new Path(args[0]));
+		FileOutputFormat.setOutputPath(conf, new Path(args[1]));
+
 		JobClient.runJob(conf);
 	}
 }

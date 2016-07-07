@@ -1,3 +1,9 @@
+lines = LOAD '/user/debadyuti.roychowdhury_gmail/wordCount/input.txt' USING TextLoader AS (line:chararray);
+words = FOREACH lines GENERATE FLATTEN(TOKENIZE(line)) as word;
+grouped = GROUP words BY word;
+wordcount = FOREACH grouped GENERATE group, COUNT(words);
+DUMP wordcount;
+
 
 ----loading and parsing data-----
 
@@ -34,8 +40,8 @@ X = filter S by min == J.minimum;
 -----UDF-----
 register PIGUdfCorrupt.jar;
 
-A = load '/weatherPIG' using TextLoader as (data:chararray);
-AF = foreach A generate TRIM(SUBSTRING(data, 6, 14)), IfCorrupted(TRIM(SUBSTRING(data, 46, 53))), IfCorrupted(TRIM(SUBSTRING(data, 38, 45)));
+A = load '/user/debadyuti.roychowdhury_gmail/PigData/weatherPIG.txt' using TextLoader as (data:chararray);
+AF = foreach A generate TRIM(SUBSTRING(data, 6, 14)), IfCorrupt(TRIM(SUBSTRING(data, 46, 53))), IfCorrupt(TRIM(SUBSTRING(data, 38, 45)));
 store AF into '/data2' using PigStorage(',');
 S = load '/data2/part-m-00000' using PigStorage(',') as (date:chararray, min:double, max:double);
 
@@ -58,8 +64,8 @@ dump X;
 
 ------------------------------------
 
-A = load '/student' as (name:chararray, age:int, gpa:float);
-B = load '/studentRoll' as (name:chararray, rollno:int);
+A = load '/user/debadyuti.roychowdhury_gmail/PigData/student' as (name:chararray, age:int, gpa:float);
+B = load '/user/debadyuti.roychowdhury_gmail/PigData/studentRoll' as (name:chararray, rollno:int);
 
 X = group A by name;
 dump X;

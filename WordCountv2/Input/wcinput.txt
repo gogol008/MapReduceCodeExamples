@@ -1,0 +1,26 @@
+This time, it’s personal. Super Bowl 50 is being played at Levi’s Stadium in Santa Clara – within sight of many of the world’s most innovative technology companies, including MapR. It’s the Silicon Valley Super Bowl* so it only makes sense that this will be the most over-analyzed event in history (at least until the next big game).
+
+Big events with unknown outcomes attract big money betting. For the last several Super Bowls, Las Vegas Sportsbooks saw action over $100 million dollars. Wherever there is big money, it’s only natural that you will find big data. We used Apache Spark to analyze NFL game results, applying machine learning to look for a nugget that the sharps in Vegas might have missed.
+
+* In 1985, Stanford hosted the Game that turned into a pseudo-home game for the 49ers. One could argue that this contest was the first “Silicon Valley” Super Bowl, but this generation’s leading entrepreneurs who were toddlers at that time may disagree.
+
+The Over/Under
+
+The Super Bowl is famous for its “prop” bets that include the coin flip, length of the national anthem, or the color of the Gatorade dumped on the winning coach in the final seconds. If the aim is to use big data methods to give us an edge, it’s preferable to stick to the major bets since there are thousands of games and results available for analysis.
+
+The two major bets for which data is available are the spread (the margin of victory the favorite must exceed to win) and the over/under. The latter is the total number of points scored by both teams; if we can analyze game data and decide if it looks like a low-scoring game vs. an offense-driven blowout, there may be a betting opportunity. It’s worth mentioning that the goal of setting the line is not to predict the outcome – Sportsbooks set the lines so that an equal amount of money is bet on either side. This is why the lines will adjust when the money comes in too one-sided.
+
+Betting the over/under isn’t going to be easy. One can infer from the figure below, based on thousands of games since 1990, those who set the over/under do so very, very accurately.
+
+One noticeable aspect of NFL games is that teams have been gradually scoring more since 1990 (a total 5-point increase). There are many likely factors that contribute to this outcome (e.g., expansion, rule changes that favor offense, etc.), but also notice that the predicted points scored (i.e., over/under) has tracked that pattern almost perfectly.
+
+Getting the Data into Apache Spark
+
+The good news is that there are 6,000+ games since 1990 that we can readily analyze. But we must restrict ourselves to the use of information about each game that is available before the game for predicting the outcome (otherwise it will taint the results).
+
+Apache Spark is a great open source tool for analyzing big data that also works well off the gridiron. After scraping a popular sports reference site for game data with a Python script, the data is imported into the Spark shell for some exploratory analysis. All of the data and code to reproduce the results or explore on your own is located here.
+
+After the game data (including the spread, field, and weather conditions plus results) is loaded into a Spark RDD, we can examine every game since 1990 with the Spark shell to get some stats and find some oddities.
+
+For instance, here is a command to find that the lowest scoring game was actually two games 
+

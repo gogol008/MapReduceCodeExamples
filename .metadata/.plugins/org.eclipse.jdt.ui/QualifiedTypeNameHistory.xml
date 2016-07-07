@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.deb.mapreduce.wordcount.wordmapper"/>
+<fullyQualifiedTypeName name="com.deb.mapreduce.wordcount.reducer"/>
+</qualifiedTypeNameHistroy>

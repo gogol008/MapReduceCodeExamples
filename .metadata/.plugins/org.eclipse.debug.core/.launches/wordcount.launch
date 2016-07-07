@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/testWordcount/src/com/mareduce/wordcount/wordCount.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.mareduce.wordcount.wordCount"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="E:\wordcountEclipse\sampleText.txt&#13;&#10;E:\wordcountEclipse\output"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="testWordcount"/>
+</launchConfiguration>

@@ -34,7 +34,7 @@ public class abbreviations {
 					BufferedReader br = new BufferedReader(new FileReader(p.toString()));
 					String line = br.readLine();
 					while(line != null) {
-						String[] tokens = line.split("\t");
+						String[] tokens = line.split(" ");
 						String ab = tokens[0];
 						String state = tokens[1];
 						abMap.put(ab, state);
@@ -53,7 +53,7 @@ public class abbreviations {
         	
         	
         	String row = value.toString();
-        	String[] tokens = row.split("\t");
+        	String[] tokens = row.split(" ");
         	String inab = tokens[0];
         	String state = abMap.get(inab);
         	outputKey.set(state);
